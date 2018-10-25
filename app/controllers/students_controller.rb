@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController
-  
+
   def index
     @students = Student.all
   end
@@ -11,11 +11,11 @@ class StudentsController < ApplicationController
   def new
      @student = Post.new
    end
- 
+
    def create
      new
-     @student.title = params[:title]
-     @student.description = params[:description]
+     @student.first_name = params[:first_name]
+     @student.last_name = params[:last_name]
      @student.save
      redirect_to post_path(@student)
    end
